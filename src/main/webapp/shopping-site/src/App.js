@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Section from './components/Section';
-//import Header from './components/Header';
+import Header from './components/Header';
 import './App.css';
 
 class App extends React.Component {
@@ -11,6 +11,7 @@ class App extends React.Component {
                 Hello Sneaker King
                 <Router>
                     <Section/>
+                    <Header/>
                 </Router>
             </div>
         );
