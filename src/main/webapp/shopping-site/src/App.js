@@ -1,16 +1,18 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom'
-import'./App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Section from './components/Section';
+//import Header from './components/Header';
+import './App.css';
 
 class App extends React.Component {
-render(){
-    return(
-    <div className="App">
-    Hello Sneaker King
-    </div>
-
-
-
+    render() {
+        return (
+            <div className="App">
+                Hello Sneaker King
+                <Router>
+                    <Section/>
+                </Router>
+            </div>
         );
     }
 }
