@@ -1,20 +1,18 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import {BrowserRouter as Router} from 'react-router-dom'
 import'./App.css';
-import { Provider } from 'react-redux'
-import store from './store'
+
+class App extends React.Component {
+render(){
+    return(
+    <div className="App">
+    Hello Sneaker King
+    </div>
 
 
-function App()  {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <Navbar />
-        <Home />
-      </div>
-    </Provider>
-  );
+
+        );
+    }
 }
 
 export default App;
