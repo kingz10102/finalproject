@@ -5,6 +5,7 @@ import com.example.finalproject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,13 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
-        return null;
-    }
-
-//to receive a specific post
-    @PostMapping
-    public User createUser() {
-
+        return userRepository.save(user);
     }
 
 }
