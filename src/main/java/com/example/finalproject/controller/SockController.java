@@ -19,10 +19,7 @@ public class SockController {
 
         return sockService.listSocks();
     }
-//    @GetMapping("/{title}")
-//    public Socks getSocks(@PathVariable String title) {
-//        return socksService.getSocks(title);
-//    }
+
     //to receive a specific post
     @PostMapping
     public Socks createSocks(@RequestBody Socks newSocks) {
