@@ -4,8 +4,7 @@ import com.example.finalproject.models.User;
 import com.example.finalproject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,12 +13,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Iterable<User> listUsers() {
+
         return userRepository.findAll();
     }
 
     @Override
-    public User createUser(User user) {
-        return userRepository.save(user);
+    public User createUser(User newUser) {
+
+        return userRepository.save(newUser);
     }
 
+    @Override
+    public User login(String username, String password) {
+
+        return userRepository.login(username, password);
+    }
 }

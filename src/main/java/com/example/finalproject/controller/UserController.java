@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
@@ -16,13 +16,19 @@ public class UserController {
 
     @GetMapping
     public Iterable<User> findAll() {
+
         return userService.listUsers();
+    }
+
+    @GetMapping("/login/{username}/{password}")
+    public User login(@PathVariable String username, @PathVariable String password) {
+        return userService.login(username, password);
     }
 
     //to receive a specific post
     @PostMapping
-    public User createUser(@RequestBody User userParam) {
-        return userService.createUser(userParam);
+    public User createUser(@RequestBody User newUser) {
+        return userService.createUser(newUser);
 
     }
 }
